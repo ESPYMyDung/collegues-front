@@ -1,0 +1,22 @@
+<p>
+  collegue works!
+</p>
+
+<div class="row">
+  <ul>
+  <div class="col-sm-12">
+    <img src="{{col.photoUrl}}" width="100" heigth="100" />
+  </div>
+
+  <div class="col-sm-12">
+    <p>Matricule : {{col.matricule}}</p>
+    <p>Nom : {{col.nom}}</p>
+    <p>Prenoms : {{col.prenoms}}</p>
+    <p>Date de Naissance : {{col.dateDeNaissance}}</p>
+    <p>Email : {{col.email}}</p>
+  </div>
+
+  <a #href>Creer un nouveau collègue</a>
+  <button (click)="modifierCollegue(saisie)">Modifier</button>
+</ul>
+</div>
