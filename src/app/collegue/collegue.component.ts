@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Collegue } from '../models/Collegue';
 
 @Component({
@@ -13,19 +13,18 @@ import { Collegue } from '../models/Collegue';
 export class CollegueComponent implements OnInit {
   @Input() col:Collegue
 
-
-  //col:Collegue = new Collegue("azigueguagua", "Lovegood", "Luna", "llovegood@rookery.com",new Date(1981,1,15), "à completer")
-  //constructor() { }
-
   ngOnInit() {}
 
-  
-/*
-  modifierCollegue(saisie: HTMLInputElement) {
-    //this.Modifier = !this.Modifier;
 
-    saisie.value = '';
-    saisie.focus();
-  }*/
+  modifierCollegue()
+  {
+    alert(`Modification du collègue`);
+  }
+
+
+  creerCollegue()
+  {
+    alert("Création d'un nouveau collègue");
+  }
 
 }

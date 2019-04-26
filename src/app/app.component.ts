@@ -4,7 +4,7 @@ import { collegueMock } from './mock/collegues.mock';
 @Component({
   selector: 'app-root',
   template: `
-  <app-collegue [col]="unObjetCollegueFourni"></app-collegue> 
+  <app-collegue [col]="unObjetCollegueFourni" ></app-collegue> 
   `
 })
 export class AppComponent {
@@ -12,4 +12,4 @@ export class AppComponent {
 }
 
 
-// 
+// (modif)="modifierCollegue($event) (cree)="CreerCollegue($event)

@@ -16,7 +16,8 @@
     <p>Email : {{col.email}}</p>
   </div>
 
-  <a #href>Creer un nouveau collègue</a>
-  <button >Modifier</button> <!--(click)="modifierCollegue(saisie)"-->
+  <a (click)="creerCollegue()" href="#" >Creer un nouveau collègue</a>
+  <button (click)="modifierCollegue()">Modifier</button>
+
 </ul>
 </div>
