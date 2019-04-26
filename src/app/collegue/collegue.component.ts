@@ -20,12 +20,12 @@ export class CollegueComponent implements OnInit {
   ngOnInit() {}
 
   
-
+/*
   modifierCollegue(saisie: HTMLInputElement) {
     //this.Modifier = !this.Modifier;
 
     saisie.value = '';
     saisie.focus();
-  }
+  }*/
 
 }
