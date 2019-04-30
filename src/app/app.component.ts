@@ -4,6 +4,9 @@ import { DataService } from './services/data.service';
 @Component({
   selector: 'app-root',
   template: `
+  <h1 class="row justify-content-center">Application Collegue</h1>
+
+
   <div class="container"> 
     <div class="row"> 
 

@@ -19,7 +19,7 @@ export class RechercheCollegueParNomComponent implements OnInit
   afficherMatricule()
   {
     this.affichageMatricule = !this.affichageMatricule;
-    this.listeMatricule = this._serv.rechercherParNom("a revoir");
+    this.listeMatricule = this._serv.rechercherParNom("saisiNom"); // saisiNom:HTMLInputElement pour recuperre le contenu du champ
   }
 
 }
