@@ -1,23 +1,35 @@
+<div class="container">
+
+
 <p>
   collegue works!
 </p>
 
 <div class="row">
-  <ul>
-  <div class="col-sm-12">
+
+
+  <div class="col-sm-4">
     <img src="{{col.photoUrl}}" width="100" heigth="100" />
   </div>
 
-  <div class="col-sm-12">
-    <p>Matricule : {{col.matricule}}</p>
-    <p>Nom : {{col.nom}}</p>
-    <p>Prenoms : {{col.prenoms}}</p>
-    <p>Date de Naissance : {{col.dateDeNaissance}}</p>
-    <p>Email : {{col.email}}</p>
+  <div class="col-sm-4">
+    <p>Matricule : </p>
+    <p>Nom : </p>
+    <p>Prenoms : </p>
+    <p>Date de Naissance : </p>
+    <p>Email : </p>
+    <a (click)="creerCollegue()" href="#" >Creer un nouveau collègue</a>
   </div>
 
-  <a (click)="creerCollegue()" href="#" >Creer un nouveau collègue</a>
-  <button (click)="modifierCollegue()">Modifier</button>
+  <div class="col-sm-4">
+      <p>{{col.matricule}}</p>
+      <p>{{col.nom}}</p>
+      <p>{{col.prenoms}}</p>
+      <p>{{col.dateDeNaissance}}</p>
+      <p>{{col.email}}</p>
+      <button (click)="modifierCollegue()">Modifier</button>
+    </div>
 
-</ul>
+</div>
+
 </div>
