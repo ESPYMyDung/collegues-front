@@ -13,12 +13,17 @@ import { Collegue } from '../models/Collegue';
 export class CollegueComponent implements OnInit {
   @Input() col:Collegue
 
+  affichageStandard = true
+
   ngOnInit() {}
 
 
   modifierCollegue()
   {
-    alert(`Modification du collègue`);
+    //alert(`Modification du collègue`);
+
+    //a revoir
+    this.affichageStandard = !this.affichageStandard;
   }
 
 
