@@ -5,9 +5,19 @@ import { listeMatricule } from './mock/matricules.mock';
 @Component({
   selector: 'app-root',
   template: `
-  <app-collegue [col]="unObjetCollegueFourni" ></app-collegue> 
+  <div class="container"> 
+    <div class="row"> 
 
-  <app-recherche-collegue-par-nom [liste]="uneListeMatriculeFourni"></app-recherche-collegue-par-nom>
+    <div class="col-sm-6">
+      <app-recherche-collegue-par-nom [liste]="uneListeMatriculeFourni"></app-recherche-collegue-par-nom>
+    </div>
+
+      <div class="col-sm-6">
+        <app-collegue [col]="unObjetCollegueFourni" ></app-collegue> 
+      </div>
+
+    </div>
+  </div>
   `
 })
 export class AppComponent {
