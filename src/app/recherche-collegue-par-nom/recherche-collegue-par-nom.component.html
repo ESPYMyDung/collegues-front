@@ -1,3 +1,18 @@
-<p>
-  recherche-collegue-par-nom works!
-</p>
+<div class="container">
+
+  <p>
+    recherche-collegue-par-nom works!
+  </p>
+
+  <div class="row">
+    <div class="col-sm-4">Recherche par nom</div>
+    <input type="text" #saisiPhoto class="col-sm-4">
+    <button (click)="afficherMatricule()" class="col-sm-4">Rechercher</button>
+
+    <ul *ngIf="affichageMatricule">
+        <li *ngFor="let mat of liste">{{mat}}</li> <!---->
+    </ul>
+
+  </div>
+
+</div>

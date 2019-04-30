@@ -20,9 +20,6 @@ export class CollegueComponent implements OnInit {
 
   modifierCollegue()
   {
-    //alert(`Modification du collègue`);
-
-    //a revoir
     this.affichageStandard = !this.affichageStandard;
   }
 
