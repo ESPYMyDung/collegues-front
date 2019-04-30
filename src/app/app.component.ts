@@ -1,6 +1,5 @@
-import { Component } from '@angular/core';
-import { collegueMock } from './mock/collegues.mock';
-import { listeMatricule } from './mock/matricules.mock';
+import { Component, OnInit } from '@angular/core';
+import { DataService } from './services/data.service';
 
 @Component({
   selector: 'app-root',
@@ -9,18 +8,24 @@ import { listeMatricule } from './mock/matricules.mock';
     <div class="row"> 
 
     <div class="col-sm-6">
-      <app-recherche-collegue-par-nom [liste]="uneListeMatriculeFourni"></app-recherche-collegue-par-nom>
-    </div>
+      <app-recherche-collegue-par-nom ></app-recherche-collegue-par-nom>
+      </div>
 
       <div class="col-sm-6">
-        <app-collegue [col]="unObjetCollegueFourni" ></app-collegue> 
+        <app-collegue [col]="unObjetCollegueFourni"></app-collegue> <!--[col]="unObjetCollegueFourni"-->
       </div>
 
     </div>
   </div>
   `
 })
-export class AppComponent {
-  unObjetCollegueFourni = collegueMock;
-  uneListeMatriculeFourni = listeMatricule;
+export class AppComponent implements OnInit {
+  unObjetCollegueFourni;
+
+  constructor(private _serv:DataService) { }
+
+  ngOnInit()
+  {
+    this.unObjetCollegueFourni = this._serv.recupererCollegueCourant();
+  }
 }
