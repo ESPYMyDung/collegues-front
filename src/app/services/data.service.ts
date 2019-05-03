@@ -6,10 +6,16 @@ import {HttpClient} from '@angular/common/http';
 import {environment} from '../../environments/environment';
 import { Observable } from 'rxjs';
 
+import {Subject} from "rxjs";
+import { Collegue } from '../models/Collegue';
+import { tap} from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
+
+  private action = new Subject<Collegue>();
 
   constructor(private _requete:HttpClient) { }
 
@@ -20,7 +26,17 @@ export class DataService {
     //return listeMatricule 
   }
 
-  recupererCollegueCourant(){
-    return collegueMock
+  afficherCollegue(mat:string) :Observable<Collegue>
+  {
+    //alert ("affichage en cours")
+    return this._requete.get<Collegue>(`${environment.backendUrl}/${mat}`)
+    .pipe(tap (col => this.action.next(col) ) ) //next c'est pour stocker la valeur != iterator
   }
+
+  recupererCollegueCourant() :Observable<Collegue>
+  {
+    return this.action.asObservable();
+    //return collegueMock
+  }
+
 }

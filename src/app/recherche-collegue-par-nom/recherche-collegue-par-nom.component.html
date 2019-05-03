@@ -10,7 +10,7 @@
     <button (click)="afficherMatricule(saisiNom.value)" class="col-sm-4">Rechercher</button>
 
     <ul *ngIf="affichageMatricule">
-        <li *ngFor="let mat of listeMatricule">{{mat}}</li> <!--col.matricule-->
+        <li *ngFor="let mat of listeMatricule" (click)="clickMatricule(mat)">{{mat}}</li> <!--(click)="afficherCollegue()"-->
         test
     </ul>
 

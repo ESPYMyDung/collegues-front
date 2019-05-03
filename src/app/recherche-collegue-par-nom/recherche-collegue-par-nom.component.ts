@@ -18,7 +18,7 @@ export class RechercheCollegueParNomComponent implements OnInit
 
   afficherMatricule(saisiNom:string)
   {
-    this.affichageMatricule = !this.affichageMatricule;
+    this.affichageMatricule = true//!this.affichageMatricule;
     /*this.listeMatricule = */
     this._serv.rechercherParNom(saisiNom)
     // subscribe a ne mettre que losrqu'on cherche a recuperer les données
@@ -26,5 +26,11 @@ export class RechercheCollegueParNomComponent implements OnInit
         error => {alert('oops')} );
  }
 
+ clickMatricule(mat:string)
+ {
+   this._serv.afficherCollegue(mat)
+    .subscribe( coll => {},
+      error =>{alert('oops')} ); //pour la gestion d'erreur principalement
+ }
 
 }

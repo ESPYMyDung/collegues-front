@@ -1,6 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core';
 import { Collegue } from '../models/Collegue';
 import { DataService } from '../services/data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-collegue',
@@ -9,14 +10,22 @@ import { DataService } from '../services/data.service';
 
 })
 
-export class CollegueComponent implements OnInit {
+export class CollegueComponent implements OnInit, OnDestroy {
   @Input() col:Collegue
 
   affichageStandard = true
 
+  actionSub:Subscription
+
   constructor(private _serv:DataService) { }
 
-  ngOnInit() {}
+  ngOnInit()
+  {
+    this._serv.recupererCollegueCourant().subscribe(
+      (valeurObtenue) => {this.col = valeurObtenue},
+      error => {alert("oops")},
+      () => {});
+  }
 
   modifierCollegue()
   {
@@ -26,6 +35,12 @@ export class CollegueComponent implements OnInit {
   creerCollegue()
   {
     alert("Création d'un nouveau collègue");
+  }
+
+  ngOnDestroy()
+  {
+    // désabonnement du composant avant sa destruction
+    this.actionSub.unsubscribe();      
   }
 
 }
