@@ -1,5 +1,5 @@
 import { Component, OnInit, Input, OnDestroy } from '@angular/core';
-import { Collegue } from '../models/Collegue';
+import { Collegue, CollModifie } from '../models/Collegue';
 import { DataService } from '../services/data.service';
 import { Subscription } from 'rxjs';
 
@@ -12,6 +12,7 @@ import { Subscription } from 'rxjs';
 
 export class CollegueComponent implements OnInit, OnDestroy {
   @Input() col:Collegue
+  colModif : CollModifie = new CollModifie('','');
 
   affichageStandard = true
 
@@ -29,12 +30,22 @@ export class CollegueComponent implements OnInit, OnDestroy {
 
   modifierCollegue()
   {
-    this.affichageStandard = !this.affichageStandard;
+    this.colModif.email = this.col.email;
+    this.colModif.photoUrl = this.col.photoUrl;
+    this._serv.modifierCollegueCourant(this.col.matricule,this.colModif)
+      .subscribe (valeur => {alert(valeur)},
+      response => {alert('erreur patch')},
+      () => {} );
   }
 
   creerCollegue()
   {
     alert("Création d'un nouveau collègue");
+  }
+
+  afficherBouton()
+  {
+    this.affichageStandard = !this.affichageStandard;;
   }
 
   ngOnDestroy()
@@ -43,4 +54,16 @@ export class CollegueComponent implements OnInit, OnDestroy {
     this.actionSub.unsubscribe();      
   }
 
+}
+
+
+export class modificationForm {
+
+  // la propriété monModel est mise à jour automatiquement avec la saisie utilisateur
+  // grâce au binding bi-directionnel  [(ngModel)]
+ modifForm:modificationForm = new modificationForm();
+
+  /*submit() {
+      console.log(this.monModel);
+  }*/
 }

@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
 
-  backendUrl: 'http://espy-collegues-api.herokuapp.com/collegues'
+  backendUrl: 'https://espy-collegues-api.herokuapp.com/collegues'
 };

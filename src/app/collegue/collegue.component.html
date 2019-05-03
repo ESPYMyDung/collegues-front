@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" p-1>
     
     <div class="row">
    
@@ -19,30 +19,40 @@
     </div>
    
     <div class="col-sm-4">
+      
         <p>{{col.matricule}}</p>
         <p>{{col.nom | uppercase}}</p>
         <p>{{col.prenoms}}</p>
         <p>{{col.dateDeNaissance | date:'mediumDate'}}</p>
         <p *ngIf="affichageStandard; else elseBlock2">{{col.email}}</p>
+
+        <form (ngSubmit)="modifierCollegue()" #modifForm="ngForm">
+
           <ng-template #elseBlock2>
-            <input type="text" #saisiEmail>
-            <input type="text" #saisiPhoto>
+              <input type="text" name="email" #email="ngModel" [(ngModel)]="col.email" required >
+              <p *ngIf="email.hasError('required')" ng-message="required">L'email doit etre renseignee'</p>
+              <input type="text" name="photoUrl" #photoUrl="ngModel" [(ngModel)]="col.photoUrl" required minlength="7">
+              <p *ngIf="photoUrl.hasError('required')" ng-message="required">L'image doit etre renseignee</p>
+              <p *ngIf="photoUrl.hasError('minlength')" ng-message="minlength">L'adresse doit avoir 7 characteres minimum</p>
+            
           </ng-template>
 
+          <ng-template #elseBlock3>
+              <div class="row justify-content-end" > <!--*ngIf="modifForm.valid; else elseBlock4"-->
+                  <button type="submit" (click)="modifierCollegue()" [hidden]="modifForm.invalid">Valider</button>
+                  <button (click)="afficherBouton()">Retour</button>
+              </div>
+          </ng-template>
+        </form>
+      
     </div>
-    
 
   </div>
 
   <div class="row justify-content-end" 
     *ngIf="affichageStandard; else elseBlock3"> 
     <a (click)="creerCollegue()" href="#" >Creer un nouveau collègue</a>
-      <button (click)="modifierCollegue()" >Modifier</button>
+      <button (click)="afficherBouton()" >Modifier</button>
   </div>
-    <ng-template #elseBlock3>
-        <div class="row justify-content-end" >
-            <button (click)="modifierCollegue()">Valider</button>
-          </div>
-    </ng-template>
   
 </div>

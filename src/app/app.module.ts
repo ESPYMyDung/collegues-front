@@ -8,6 +8,7 @@ import { RechercheCollegueParNomComponent } from './recherche-collegue-par-nom/r
 import { DataService } from './services/data.service';
 
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule }   from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule //pout faire les requetes http backend
+    HttpClientModule, //pour faire les requetes http backend
+    FormsModule //pour gereg les formulaires
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,7 +7,7 @@ import {environment} from '../../environments/environment';
 import { Observable } from 'rxjs';
 
 import {Subject} from "rxjs";
-import { Collegue } from '../models/Collegue';
+import { Collegue, CollModifie } from '../models/Collegue';
 import { tap} from 'rxjs/operators';
 
 @Injectable({
@@ -38,5 +38,11 @@ export class DataService {
     return this.action.asObservable();
     //return collegueMock
   }
+
+  modifierCollegueCourant(mat:string, colModif:CollModifie)
+  {
+    return this._requete.patch<Collegue>(`${environment.backendUrl}/${mat}`, colModif );
+  }
+
 
 }

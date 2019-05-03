@@ -6,7 +6,7 @@ import { DataService } from './services/data.service';
   template: `
   <h1 class="row justify-content-center">Application Collegue</h1>
 
-  <div class="container"> 
+  <div class="container" m-0="0"> 
     <div class="row"> 
 
     <div class="col-sm-6">
