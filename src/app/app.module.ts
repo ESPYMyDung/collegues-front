@@ -9,12 +9,14 @@ import { DataService } from './services/data.service';
 
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
+import { CreationCollegueComponent } from './creation-collegue/creation-collegue.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CollegueComponent,
-    RechercheCollegueParNomComponent
+    RechercheCollegueParNomComponent,
+    CreationCollegueComponent
   ],
   imports: [
     BrowserModule,

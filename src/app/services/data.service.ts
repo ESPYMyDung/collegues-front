@@ -44,5 +44,10 @@ export class DataService {
     return this._requete.patch<Collegue>(`${environment.backendUrl}/${mat}`, colModif );
   }
 
+  creerCollegueCourant(colCree:Collegue)
+  {
+    return this._requete.post<Collegue>(`${environment.backendUrl}/`, colCree);
+  }
+
 
 }

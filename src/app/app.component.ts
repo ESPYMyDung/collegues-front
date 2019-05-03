@@ -17,6 +17,8 @@ import { DataService } from './services/data.service';
         <app-collegue [col]="unObjetCollegueFourni"></app-collegue> <!--[col]="unObjetCollegueFourni"-->
       </div>
 
+      <app-creation-collegue></app-creation-collegue>
+
     </div>
   </div>
   `

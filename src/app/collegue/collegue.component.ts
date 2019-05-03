@@ -62,8 +62,4 @@ export class modificationForm {
   // la propriété monModel est mise à jour automatiquement avec la saisie utilisateur
   // grâce au binding bi-directionnel  [(ngModel)]
  modifForm:modificationForm = new modificationForm();
-
-  /*submit() {
-      console.log(this.monModel);
-  }*/
 }
