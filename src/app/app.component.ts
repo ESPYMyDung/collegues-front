@@ -9,15 +9,13 @@ import { DataService } from './services/data.service';
   <div class="container" m-0="0"> 
     <div class="row"> 
 
-    <div class="col-sm-6">
-      <app-recherche-collegue-par-nom ></app-recherche-collegue-par-nom>
+      <div class="col-sm-6">
+        <app-recherche-collegue-par-nom ></app-recherche-collegue-par-nom>
       </div>
 
       <div class="col-sm-6">
         <app-collegue [col]="unObjetCollegueFourni"></app-collegue> <!--[col]="unObjetCollegueFourni"-->
       </div>
-
-      <app-creation-collegue></app-creation-collegue>
 
     </div>
   </div>

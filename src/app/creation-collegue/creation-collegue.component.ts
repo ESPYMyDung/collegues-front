@@ -1,4 +1,4 @@
-import { Component, OnInit, Input} from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { Collegue} from '../models/Collegue';
 import { DataService } from '../services/data.service';
 
@@ -8,28 +8,28 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./creation-collegue.component.css']
 })
 export class CreationCollegueComponent implements OnInit {
+  @Output() creationCollegue:EventEmitter<Boolean> = new EventEmitter<Boolean>()
   col:Collegue = new Collegue('','','','',undefined,'');
-
-  affichageStandard = true
 
   constructor(private _serv:DataService) { }
   ngOnInit() {}
 
   creerCollegue()
   {
-/*
     this._serv.creerCollegueCourant(this.col)
-      .subscribe (valeur => {alert(valeur)},
-      response => {alert('erreur patch')},
-      () => {} );*/
+      .subscribe (valeur => {alert(valeur); this.afficherBouton()},
+      response => {alert(response.error)},
+      () => {} );
   }
 
-  afficherBouton(){}
+  afficherBouton()
+  {
+    this.creationCollegue.emit(false);
+  }
 }
 
 
 export class creationForm {
-
   // la propriété monModel est mise à jour automatiquement avec la saisie utilisateur
   // grâce au binding bi-directionnel  [(ngModel)]
  creeForm:creationForm = new creationForm();

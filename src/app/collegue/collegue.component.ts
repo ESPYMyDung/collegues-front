@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core';
+import { Component, OnInit, Input, OnDestroy } from '@angular/core'; //Output, EventEmitter, 
 import { Collegue, CollModifie } from '../models/Collegue';
 import { DataService } from '../services/data.service';
 import { Subscription } from 'rxjs';
@@ -12,11 +12,11 @@ import { Subscription } from 'rxjs';
 
 export class CollegueComponent implements OnInit, OnDestroy {
   @Input() col:Collegue
-  colModif : CollModifie = new CollModifie('','');
-
-  affichageStandard = true
-
   actionSub:Subscription
+
+  colModif : CollModifie = new CollModifie('','');
+  affichageStandard = true
+  creationCollegue = false
 
   constructor(private _serv:DataService) { }
 
@@ -34,18 +34,19 @@ export class CollegueComponent implements OnInit, OnDestroy {
     this.colModif.photoUrl = this.col.photoUrl;
     this._serv.modifierCollegueCourant(this.col.matricule,this.colModif)
       .subscribe (valeur => {alert(valeur)},
-      response => {alert('erreur patch')},
+      response => {alert(response.error)},
       () => {} );
   }
 
   creerCollegue()
   {
     alert("Création d'un nouveau collègue");
+    this.creationCollegue = true;
   }
 
   afficherBouton()
   {
-    this.affichageStandard = !this.affichageStandard;;
+    this.affichageStandard = !this.affichageStandard;
   }
 
   ngOnDestroy()

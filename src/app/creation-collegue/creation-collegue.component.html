@@ -1,8 +1,3 @@
-<p>
-  creation-collegue works!
-</p>
-
-
 <div class="container" p-1>
     
   <div class="row">
@@ -33,14 +28,14 @@
         <p *ngIf="dateDeNaissance.hasError('required')" ng-message="required">La date de naissance doit etre renseignee</p>
 
         <input type="text" name="email" #email="ngModel" [(ngModel)]="col.email" required >
-        <p *ngIf="email.hasError('required')" ng-message="required">L'email doit etre renseignee'</p>
+        <p *ngIf="email.hasError('required')" ng-message="required">L'email doit etre renseignee</p>
 
         <input type="text" name="photoUrl" #photoUrl="ngModel" [(ngModel)]="col.photoUrl" required minlength="7">
         <p *ngIf="photoUrl.hasError('required')" ng-message="required">L'image doit etre renseignee</p>
         <p *ngIf="photoUrl.hasError('minlength')" ng-message="minlength">L'adresse doit avoir 7 characteres minimum</p>
 
               <div class="row justify-content-end" >
-                  <button type="submit" (click)="creerCollegue()" [hidden]="creeForm.invalid">Valider</button>
+                  <button type="submit" [hidden]="creeForm.invalid">Valider</button>
                   <button (click)="afficherBouton()">Retour</button>
               </div>
       </form>

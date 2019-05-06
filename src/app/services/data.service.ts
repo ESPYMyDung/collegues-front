@@ -49,5 +49,4 @@ export class DataService {
     return this._requete.post<Collegue>(`${environment.backendUrl}/`, colCree);
   }
 
-
 }
