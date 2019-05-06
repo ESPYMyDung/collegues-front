@@ -17,3 +17,11 @@ export class CollModifie
         public photoUrl:string
     ) {}
 }
+
+export class CollGallerie
+{
+    constructor(
+        public matricule:string,
+        public photoUrl:string
+    ) {}
+}

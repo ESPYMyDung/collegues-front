@@ -24,7 +24,7 @@ export class CollegueComponent implements OnInit, OnDestroy {
   {
     this._serv.recupererCollegueCourant().subscribe(
       (valeurObtenue) => {this.col = valeurObtenue},
-      error => {alert("oops")},
+      error => {alert(error.error)},
       () => {});
   }
 
@@ -33,14 +33,13 @@ export class CollegueComponent implements OnInit, OnDestroy {
     this.colModif.email = this.col.email;
     this.colModif.photoUrl = this.col.photoUrl;
     this._serv.modifierCollegueCourant(this.col.matricule,this.colModif)
-      .subscribe (valeur => {alert(valeur)},
+      .subscribe (valeur => {},
       response => {alert(response.error)},
       () => {} );
   }
 
   creerCollegue()
   {
-    alert("Création d'un nouveau collègue");
     this.creationCollegue = true;
   }
 

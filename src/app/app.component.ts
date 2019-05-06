@@ -6,7 +6,13 @@ import { DataService } from './services/data.service';
   template: `
   <h1 class="row justify-content-center">Application Collegue</h1>
 
+  <nav> 
+    <app-menu></app-menu>
+  </nav>
+
+  
   <div class="container" m-0="0"> 
+  <!--
     <div class="row"> 
 
       <div class="col-sm-6">
@@ -14,10 +20,14 @@ import { DataService } from './services/data.service';
       </div>
 
       <div class="col-sm-6">
-        <app-collegue [col]="unObjetCollegueFourni"></app-collegue> <!--[col]="unObjetCollegueFourni"-->
+        <app-collegue [col]="unObjetCollegueFourni"></app-collegue>
       </div>
 
     </div>
+    -->
+
+    <router-outlet></router-outlet>
+
   </div>
   `
 })

@@ -10,13 +10,19 @@ import { DataService } from './services/data.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule }   from '@angular/forms';
 import { CreationCollegueComponent } from './creation-collegue/creation-collegue.component';
+import { MenuComponent } from './menu/menu.component';
+import { GallerieComponent } from './gallerie/gallerie.component';
+import { AccueilComponent } from './accueil/accueil.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CollegueComponent,
     RechercheCollegueParNomComponent,
-    CreationCollegueComponent
+    CreationCollegueComponent,
+    MenuComponent,
+    GallerieComponent,
+    AccueilComponent
   ],
   imports: [
     BrowserModule,

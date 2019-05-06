@@ -1,0 +1,44 @@
+<p>
+  gallerie works!
+</p>
+
+<div class="container">
+
+  <div *ngIf="affichageColl==false">
+    <button (click)="recupererPhoto()">Affichage Collegue</button>
+    <ul>
+      <li *ngFor="let coll of listeCollGall">
+        <img src="{{coll.photoUrl}}" width="100" heigth="100" (click)="recupererColl()"/>
+        {{coll.matricule}}
+      </li>
+    </ul>
+  </div>
+
+  <div *ngIf="affichageColl==true">
+
+    <div class="col-sm-12">
+      <img src="{{coll.photoUrl}}" width="100" heigth="100" />
+    </div>
+
+    <div class="row"></div>
+      <div class="col-sm-6">
+        <p>Matricule : </p>
+        <p>Nom : </p>
+        <p>Prenoms : </p>
+        <p>Date de Naissance : </p>
+        <p>Email : </p>
+        <p>Photo URL :</p>
+
+      </div>
+
+    <div class="col-sm-6">
+
+      <p>{{coll.matricule}}</p>
+      <p>{{coll.nom | uppercase}}</p>
+      <p>{{coll.prenoms}}</p>
+      <p>{{coll.dateDeNaissance | date:'mediumDate'}}</p>
+
+      <button (click)="afficherListe()">Retour</button>
+    </div>
+
+  </div>

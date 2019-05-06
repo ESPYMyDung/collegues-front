@@ -7,7 +7,7 @@ import {environment} from '../../environments/environment';
 import { Observable } from 'rxjs';
 
 import {Subject} from "rxjs";
-import { Collegue, CollModifie } from '../models/Collegue';
+import { Collegue, CollModifie, CollGallerie } from '../models/Collegue';
 import { tap} from 'rxjs/operators';
 
 @Injectable({
@@ -16,6 +16,7 @@ import { tap} from 'rxjs/operators';
 export class DataService {
 
   private action = new Subject<Collegue>();
+  private listePhoto = new Subject<CollGallerie[]>();
 
   constructor(private _requete:HttpClient) { }
 
@@ -47,6 +48,12 @@ export class DataService {
   creerCollegueCourant(colCree:Collegue)
   {
     return this._requete.post<Collegue>(`${environment.backendUrl}/`, colCree);
+  }
+
+  afficherPhoto() :Observable<CollGallerie[]>
+  {
+    return this._requete.get<CollGallerie[]>(`${environment.backendUrl}/gallerie`)
+    .pipe(tap (colGal => this.listePhoto.next(colGal) ) )
   }
 
 }

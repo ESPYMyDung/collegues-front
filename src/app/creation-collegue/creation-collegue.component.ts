@@ -17,7 +17,7 @@ export class CreationCollegueComponent implements OnInit {
   creerCollegue()
   {
     this._serv.creerCollegueCourant(this.col)
-      .subscribe (valeur => {alert(valeur); this.afficherBouton()},
+      .subscribe (valeur => {alert(valeur.matricule); this.afficherBouton()},
       response => {alert(response.error)},
       () => {} );
   }

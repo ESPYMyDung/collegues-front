@@ -5,9 +5,9 @@
     <input type="text" #saisiNom  class="col-sm-4">
     <button (click)="afficherMatricule(saisiNom.value)" class="col-sm-4">Rechercher</button>
 
+    <h3>Liste de matricules</h3>
     <ul *ngIf="affichageMatricule">
         <li *ngFor="let mat of listeMatricule" (click)="clickMatricule(mat)">{{mat}}</li> <!--(click)="afficherCollegue()"-->
-        test
     </ul>
 
   </div>
