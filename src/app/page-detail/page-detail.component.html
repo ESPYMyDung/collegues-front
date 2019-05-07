@@ -26,6 +26,13 @@
 
   </div>
 
+  <div class="row">
+      <p>Laisser un commentaire : </p>
+      <input type="text" name="message" #message="ngModel" [(ngModel)]="comment.message">
+      <button (click)="ajouterNote()">Enregistrer</button>
+  
+  </div>
+
   <button routerLink="/gallerie" routerLinkActive="active-link" >Retour</button>
 
 </div>

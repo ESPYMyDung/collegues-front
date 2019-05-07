@@ -51,4 +51,12 @@ export class DataService {
     .pipe(tap (colGal => this.listePhoto.next(colGal) ) )
   }
 
+  ajouterNote(mat:string) :Observable<Collegue>
+  {
+    /*
+    return this._requete.get<Collegue>(`${environment.backendUrl}/gallerie/${mat}`)
+    .pipe(tap (coll => this.listePhoto.next(coll) ) )
+    */
+  }
+
 }

@@ -13,14 +13,7 @@ export const routes: Routes =
   { path: 'gallerie', component: GallerieComponent },
   { path: 'gallerie/:mat', component: PageDetailComponent },
   { path: 'apropos', component: AproposComponent },
-  
-  /*path: 'pizzas/:pizzaId',
-    component: PizzaDetailComponent,
-    children: [
-        { path: '', pathMatch: 'full', redirectTo: 'caracteristiques' },
-        { path: 'avis', component: AvisPizzaComponent },
-        { path: 'caracteristiques', component: CaracteristiquesComponent }
-    ]*/
+  {path: '**', redirectTo: '/apropos'}
 
   // redirection par défault vers /xxx un seul a faire!!!!
   //{ path: '', pathMatch: 'full', redirectTo: '/accueil' },
