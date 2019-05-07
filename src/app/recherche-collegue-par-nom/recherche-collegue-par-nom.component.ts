@@ -1,6 +1,5 @@
 import { Component, OnInit} from '@angular/core';
 import { DataService } from '../services/data.service';
-import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-recherche-collegue-par-nom',
@@ -12,14 +11,13 @@ export class RechercheCollegueParNomComponent implements OnInit
   listeMatricule:string[]
   affichageMatricule = false
 
-  constructor(private _serv:DataService, private _requete:HttpClient) { }
+  constructor(private _serv:DataService) { }
 
   ngOnInit() {}
 
   afficherMatricule(saisiNom:string)
   {
-    this.affichageMatricule = true//!this.affichageMatricule;
-    /*this.listeMatricule = */
+    this.affichageMatricule = true
     this._serv.rechercherParNom(saisiNom)
     // subscribe a ne mettre que losrqu'on cherche a recuperer les données
       .subscribe( listMat => {this.listeMatricule = listMat} ,
@@ -30,7 +28,7 @@ export class RechercheCollegueParNomComponent implements OnInit
  {
    this._serv.afficherCollegue(mat)
     .subscribe( coll => {},
-      error =>{alert('oops')} ); //pour la gestion d'erreur principalement
+      error =>{alert('oops')} );
  }
 
 }

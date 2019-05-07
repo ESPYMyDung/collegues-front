@@ -1,4 +1,4 @@
-<div class="container" p-1>
+<div class="container">
 
   <div class="row">
     <div class="col-sm-4">Recherche par nom</div>
@@ -7,7 +7,7 @@
 
     <h3>Liste de matricules</h3>
     <ul *ngIf="affichageMatricule">
-        <li *ngFor="let mat of listeMatricule" (click)="clickMatricule(mat)">{{mat}}</li> <!--(click)="afficherCollegue()"-->
+        <li *ngFor="let mat of listeMatricule" (click)="clickMatricule(mat)">{{mat}}</li>
     </ul>
 
   </div>

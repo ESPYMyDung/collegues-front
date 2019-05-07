@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { DataService } from '../services/data.service';
-import { CollGallerie} from '../models/Collegue';
+import { CollGallerie, Collegue } from '../models/Collegue';
+
 
 @Component({
   selector: 'app-gallerie',
@@ -8,27 +9,33 @@ import { CollGallerie} from '../models/Collegue';
   styleUrls: ['./gallerie.component.css']
 })
 export class GallerieComponent implements OnInit {
+  collegue:Collegue
   listeCollGall :CollGallerie[]
-  affichageColl = false
+  afficheTrombi = true
 
-  constructor(private _serv:DataService) { }
+  constructor(private _serv:DataService)
+  { }
 
-  ngOnInit() {  }
-
-  recupererPhoto()
-  {
+  ngOnInit()
+  {        
     this._serv.afficherPhoto()
     .subscribe( coll => {this.listeCollGall = coll},
-      error =>{alert('oops gallerie')} ); //pour la gestion d'erreur principalement
-  }
+      error =>{alert('oops gallerie')} );
+   }
 
-  recupererColl()
+  recupererColl(mat:string)
   {
-    this.affichageColl = true
-    //return coll
+    this._serv.afficherCollegue(mat)
+    .subscribe( coll => {},
+      error =>{alert('oops affichage')} );
   }
 
-  afficherListe()
-  { this.affichageColl = false }
+  /*chargerCollegue()
+  {
+    this._serv.recupererCollegueCourant().subscribe(
+      (valeurObtenue) => {this.collegue = valeurObtenue},
+      error => {alert(error.error)},
+      () => {});
+  }*/
 
 }

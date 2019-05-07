@@ -1,7 +1,7 @@
-import { Component, OnInit, Input, OnDestroy } from '@angular/core'; //Output, EventEmitter, 
-import { Collegue, CollModifie } from '../models/Collegue';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { Subscription } from 'rxjs';
+import { Collegue, CollModifie } from '../models/Collegue';
 
 @Component({
   selector: 'app-collegue',
@@ -9,9 +9,8 @@ import { Subscription } from 'rxjs';
   styleUrls: ['./collegue.component.css']
 
 })
-
 export class CollegueComponent implements OnInit, OnDestroy {
-  @Input() col:Collegue
+  col:Collegue = new Collegue('','','','',undefined, '')
   actionSub:Subscription
 
   colModif : CollModifie = new CollModifie('','');
@@ -22,7 +21,7 @@ export class CollegueComponent implements OnInit, OnDestroy {
 
   ngOnInit()
   {
-    this._serv.recupererCollegueCourant().subscribe(
+    this.actionSub = this._serv.recupererCollegueCourant().subscribe(
       (valeurObtenue) => {this.col = valeurObtenue},
       error => {alert(error.error)},
       () => {});
@@ -57,9 +56,3 @@ export class CollegueComponent implements OnInit, OnDestroy {
 }
 
 
-export class modificationForm {
-
-  // la propriété monModel est mise à jour automatiquement avec la saisie utilisateur
-  // grâce au binding bi-directionnel  [(ngModel)]
- modifForm:modificationForm = new modificationForm();
-}

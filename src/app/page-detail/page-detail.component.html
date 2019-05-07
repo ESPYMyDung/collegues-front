@@ -1,0 +1,31 @@
+<p>
+  page-detail works!
+</p>
+
+<div class="container">
+  <div class="col-sm-12">
+    <img src="{{col.photoUrl}}" width="400" heigth="400" />
+  </div>
+
+  <div class="row">
+    <div class="col-sm-6">
+      <p>Matricule : </p>
+      <p>Nom : </p>
+      <p>Prenoms : </p>
+      <p>Date de Naissance : </p>
+      <p>Email : </p>
+    </div>
+
+    <div class="col-sm-6">
+      <p>{{col.matricule}}</p>
+      <p>{{col.nom | uppercase}}</p>
+      <p>{{col.prenoms}}</p>
+      <p>{{col.dateDeNaissance | date:'mediumDate'}}</p>
+      <p>{{col.email}}</p>
+    </div>
+
+  </div>
+
+  <button routerLink="/gallerie" routerLinkActive="active-link" >Retour</button>
+
+</div>

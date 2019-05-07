@@ -7,13 +7,9 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./accueil.component.css']
 })
 export class AccueilComponent implements OnInit {
-  unObjetCollegueFourni;
 
-  constructor(private _serv:DataService) { }
+  constructor() { }
 
-  ngOnInit()
-  {
-    this.unObjetCollegueFourni = this._serv.recupererCollegueCourant();
-  }
+  ngOnInit() {  }
 
 }

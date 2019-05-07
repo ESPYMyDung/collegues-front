@@ -27,10 +27,3 @@ export class CreationCollegueComponent implements OnInit {
     this.creationCollegue.emit(false);
   }
 }
-
-
-export class creationForm {
-  // la propriété monModel est mise à jour automatiquement avec la saisie utilisateur
-  // grâce au binding bi-directionnel  [(ngModel)]
- creeForm:creationForm = new creationForm();
-}
