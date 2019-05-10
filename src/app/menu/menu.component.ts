@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Routes } from '@angular/router';
+import { DataService } from '../services/data.service';
 
 
 @Component({
@@ -16,7 +17,3 @@ export class MenuComponent implements OnInit {
   }
 
 }
-
-export const ROUTES: Routes = [
- 
-];

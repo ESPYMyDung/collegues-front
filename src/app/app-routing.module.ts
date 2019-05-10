@@ -5,7 +5,7 @@ import { GallerieComponent } from './gallerie/gallerie.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import { AproposComponent } from './apropos/apropos.component';
 import { PageDetailComponent } from './page-detail/page-detail.component';
-//import { CComponent } from './c.component';
+import { AuthentificationComponent } from './authentification/authentification.component';
 
 export const routes: Routes = 
 [
@@ -13,7 +13,9 @@ export const routes: Routes =
   { path: 'gallerie', component: GallerieComponent },
   { path: 'gallerie/:mat', component: PageDetailComponent },
   { path: 'apropos', component: AproposComponent },
-  {path: '**', redirectTo: '/apropos'}
+  { path: 'auth', component: AuthentificationComponent },
+  { path: 'logout', component: AuthentificationComponent },
+  { path: '**', redirectTo: '/apropos'}
 
   // redirection par défault vers /xxx un seul a faire!!!!
   //{ path: '', pathMatch: 'full', redirectTo: '/accueil' },

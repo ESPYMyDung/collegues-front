@@ -10,7 +10,7 @@ import { Collegue, CollModifie } from '../models/Collegue';
 
 })
 export class CollegueComponent implements OnInit, OnDestroy {
-  col:Collegue = new Collegue('','','','',undefined, '')
+  col:Collegue = new Collegue('','','','',undefined, '', '', [])
   actionSub:Subscription
 
   colModif : CollModifie = new CollModifie('','');

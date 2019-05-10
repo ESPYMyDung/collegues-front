@@ -26,7 +26,7 @@ export class RechercheCollegueParNomComponent implements OnInit
 
  clickMatricule(mat:string)
  {
-   this._serv.afficherCollegue(mat)
+   this._serv.rechercherParMatricule(mat)
     .subscribe( coll => {},
       error =>{alert('oops')} );
  }

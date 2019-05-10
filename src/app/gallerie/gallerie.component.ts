@@ -25,7 +25,7 @@ export class GallerieComponent implements OnInit {
 
   recupererColl(mat:string)
   {
-    this._serv.afficherCollegue(mat)
+    this._serv.rechercherParMatricule(mat)
     .subscribe( coll => {},
       error =>{alert('oops affichage')} );
   }

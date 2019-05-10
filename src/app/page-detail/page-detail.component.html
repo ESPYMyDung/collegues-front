@@ -29,9 +29,14 @@
   <div class="row">
       <p>Laisser un commentaire : </p>
       <input type="text" name="message" #message="ngModel" [(ngModel)]="comment.message">
-      <button (click)="ajouterNote()">Enregistrer</button>
+      <button (click)="ajouterNoteCourante()">Enregistrer</button>
   
   </div>
+
+  <h3>Liste de notes</h3>
+    <ul>
+        <li *ngFor="let comment of col.notes">{{comment}}</li>
+    </ul>
 
   <button routerLink="/gallerie" routerLinkActive="active-link" >Retour</button>
 

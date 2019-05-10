@@ -9,7 +9,7 @@ import { DataService } from '../services/data.service';
 })
 export class CreationCollegueComponent implements OnInit {
   @Output() creationCollegue:EventEmitter<Boolean> = new EventEmitter<Boolean>()
-  col:Collegue = new Collegue('','','','',undefined,'');
+  col:Collegue = new Collegue('','','','',undefined,'', '', ["user"]);
 
   constructor(private _serv:DataService) { }
   ngOnInit() {}

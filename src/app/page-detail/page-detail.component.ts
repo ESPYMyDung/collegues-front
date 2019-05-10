@@ -10,7 +10,7 @@ import { Note } from '../models/Note';
   styleUrls: ['./page-detail.component.css']
 })
 export class PageDetailComponent implements OnInit {
-  col:Collegue = new Collegue('','','','',undefined,'');
+  col:Collegue = new Collegue('','','','',undefined,'', '', []);
   actionSub:Subscription
   comment:Note = new Note(undefined, '', undefined)
 
@@ -26,21 +26,17 @@ export class PageDetailComponent implements OnInit {
 
   ajouterNoteCourante()
   {
-    /*
-    this._serv.ajouterNote(this.col.matricule)
+    
+    this._serv.chercherColleguePourNote(this.col.matricule)
       .subscribe (valeur => {},
       response => {alert(response.error)},
-      () => {} );*/
+      () => {} );
   }
-
-
 
   ngOnDestroy()
   {
     // désabonnement du composant avant sa destruction
     this.actionSub.unsubscribe();      
   }
-
-  
 
 }

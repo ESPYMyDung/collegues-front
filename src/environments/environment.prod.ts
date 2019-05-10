@@ -1,5 +1,7 @@
+const baseUrl = 'https://espy-collegues-api.herokuapp.com'
 export const environment = {
   production: true,
 
-  backendUrl: 'https://espy-collegues-api.herokuapp.com/collegues'
+  baseUrl,
+  backendUrl: `${baseUrl}/collegues`
 };
