@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { DataService } from '../services/data.service';
 import { Subscription } from 'rxjs';
 import { Collegue, CollModifie } from '../models/Collegue';
+import { Note } from '../models/Note';
 
 @Component({
   selector: 'app-collegue',
@@ -10,7 +11,7 @@ import { Collegue, CollModifie } from '../models/Collegue';
 
 })
 export class CollegueComponent implements OnInit, OnDestroy {
-  col:Collegue = new Collegue('','','','',undefined, '', '', [])
+  col:Collegue = new Collegue('','','','',undefined,'',undefined, '', [])
   actionSub:Subscription
 
   colModif : CollModifie = new CollModifie('','');

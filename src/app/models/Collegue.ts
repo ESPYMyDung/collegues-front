@@ -9,6 +9,7 @@ export class Collegue
         public email:string,
         public dateDeNaissance:Date,
         public photoUrl:string,
+        public notes:Note[],
         public motDePasse:string,
         public autorites:string[],
     ) {}

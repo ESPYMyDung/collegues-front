@@ -1,6 +1,7 @@
 import { Component, OnInit, Output,EventEmitter } from '@angular/core';
 import { Collegue} from '../models/Collegue';
 import { DataService } from '../services/data.service';
+import { Note } from '../models/Note';
 
 @Component({
   selector: 'app-creation-collegue',
@@ -9,7 +10,7 @@ import { DataService } from '../services/data.service';
 })
 export class CreationCollegueComponent implements OnInit {
   @Output() creationCollegue:EventEmitter<Boolean> = new EventEmitter<Boolean>()
-  col:Collegue = new Collegue('','','','',undefined,'', '', ["user"]);
+  col:Collegue = new Collegue('','','','',undefined,'',undefined, '', ["user"]);
 
   constructor(private _serv:DataService) { }
   ngOnInit() {}

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from '../services/data.service';
-import { Collegue } from '../models/Collegue';
+import { Collegue, CollNote } from '../models/Collegue';
 import { Subscription } from 'rxjs';
 import { Note } from '../models/Note';
 
@@ -10,9 +10,11 @@ import { Note } from '../models/Note';
   styleUrls: ['./page-detail.component.css']
 })
 export class PageDetailComponent implements OnInit {
-  col:Collegue = new Collegue('','','','',undefined,'', '', []);
+  col:Collegue = new Collegue('','','','',undefined,'',undefined, '', []);
   actionSub:Subscription
   comment:Note = new Note(undefined, '', undefined)
+  listeCollNote:Collegue[]
+  //colNote:CollNote = new CollNote('','','','',undefined, '',[])
 
   constructor(private _serv:DataService) { }
 
@@ -26,11 +28,12 @@ export class PageDetailComponent implements OnInit {
 
   ajouterNoteCourante()
   {
-    
-    this._serv.chercherColleguePourNote(this.col.matricule)
+    let tmp = this._serv.chercherColleguePourNote(this.col.matricule)
       .subscribe (valeur => {},
       response => {alert(response.error)},
       () => {} );
+
+      
   }
 
   ngOnDestroy()
