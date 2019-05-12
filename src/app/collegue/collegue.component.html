@@ -30,9 +30,12 @@
           <ng-template #elseBlock2>
               <input type="text" name="email" #email="ngModel" [(ngModel)]="col.email" required >
               <p *ngIf="email.hasError('required')" ng-message="required">L'email doit etre renseignee'</p>
-              <input type="text" name="photoUrl" #photoUrl="ngModel" [(ngModel)]="col.photoUrl" required minlength="7">
+              <input appUrlValidator type="text" name="photoUrl" #photoUrl="ngModel" [(ngModel)]="col.photoUrl" required minlength="7">
               <p *ngIf="photoUrl.hasError('required')" ng-message="required">L'image doit etre renseignee</p>
               <p *ngIf="photoUrl.hasError('minlength')" ng-message="minlength">L'adresse doit avoir 7 characteres minimum</p>
+              <p *ngIf="photoUrl.dirty && photoUrl.errors?.appUrlValidator" class="error">
+                {{cc.errors.creditCard}}
+              </p>
             
           </ng-template>
 
