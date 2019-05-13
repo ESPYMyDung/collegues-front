@@ -16,6 +16,7 @@ import { AproposComponent } from './apropos/apropos.component';
 
 import { PageDetailComponent } from './page-detail/page-detail.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
+import { UrlValidatorDirective } from './validators/url-validator.directive';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AuthentificationComponent } from './authentification/authentification.c
     AccueilComponent,
     AproposComponent,
     PageDetailComponent,
-    AuthentificationComponent
+    AuthentificationComponent,
+    UrlValidatorDirective
   ],
   imports: [
     BrowserModule,
