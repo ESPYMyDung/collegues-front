@@ -7,11 +7,11 @@
     </div>
    
     <div class="col-sm-4">
-      <p>Matricule : </p>
-      <p>Nom : </p>
-      <p>Prenoms : </p>
-      <p>Date de Naissance : </p>
-      <p>Email : </p>
+      <p>Matricule : </p> <hr />
+      <p>Nom : </p> <hr />
+      <p>Prenoms : </p> <hr />
+      <p>Date de Naissance : </p> <hr />
+      <p>Email : </p> <hr />
       <p *ngIf="affichageStandard; else elseBlock1"></p>
       <ng-template #elseBlock1>Photo URL :</ng-template>
       
@@ -19,17 +19,18 @@
    
     <div class="col-sm-4">
       
-        <p>{{col.matricule}}</p>
-        <p>{{col.nom | uppercase}}</p>
-        <p>{{col.prenoms}}</p>
-        <p>{{col.dateDeNaissance | date:'mediumDate'}}</p>
-        <p *ngIf="affichageStandard; else elseBlock2">{{col.email}}</p>
+        <p>{{col.matricule}}</p> <hr />
+        <p>{{col.nom | uppercase}}</p> <hr />
+        <p>{{col.prenoms}}</p> <hr />
+        <p>{{col.dateDeNaissance | date:'mediumDate'}}</p> <hr />
+        <p *ngIf="affichageStandard; else elseBlock2">{{col.email}}</p> <hr />
 
         <form (ngSubmit)="modifierCollegue()" #modifForm="ngForm">
 
           <ng-template #elseBlock2>
               <input type="text" name="email" #email="ngModel" [(ngModel)]="col.email" required >
               <p *ngIf="email.hasError('required')" ng-message="required">L'email doit etre renseignee'</p>
+              <hr />
               <input appUrlValidator type="text" name="photoUrl" #photoUrl="ngModel" [(ngModel)]="col.photoUrl" required minlength="7">
               <p *ngIf="photoUrl.hasError('required')" ng-message="required">L'image doit etre renseignee</p>
               <p *ngIf="photoUrl.hasError('minlength')" ng-message="minlength">L'adresse doit avoir 7 characteres minimum</p>
@@ -41,8 +42,8 @@
 
           <ng-template #elseBlock3>
               <div class="row justify-content-end" >
-                  <button type="submit" (click)="modifierCollegue()" [hidden]="modifForm.invalid">Valider</button>
-                  <button (click)="afficherBouton()">Retour</button>
+                  <button class="btn btn-primary" type="submit" (click)="modifierCollegue()" [hidden]="modifForm.invalid">Valider</button>
+                  <button class="btn btn-secondary" (click)="afficherBouton()">Retour</button>
               </div>
           </ng-template>
         </form>
@@ -54,7 +55,7 @@
   <div class="row justify-content-end" 
     *ngIf="affichageStandard; else elseBlock3"> 
     <a role="button" (click)="creerCollegue()">Creer un nouveau collègue</a>
-    <button (click)="afficherBouton()" >Modifier</button>
+    <button class="btn btn-primary" (click)="afficherBouton()" >Modifier</button>
   </div>
   
 </div>

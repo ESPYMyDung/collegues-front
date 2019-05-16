@@ -7,22 +7,28 @@
   <div class="col-sm-12">
 
     <form (ngSubmit)="validerAuth()" #creeForm="ngForm">
-      <label>Matricule : </label>
-      <input type="text" name="matriculeColl" #matriculeColl="ngModel" [(ngModel)]="user.matriculeColl" required>
-      <p *ngIf="matriculeColl.hasError('required')" ng-message="required">Le matricule doit etre renseignee</p>
+      <div>
+        <label>Matricule : </label>
+        <input type="text" name="matriculeColl" #matriculeColl="ngModel" [(ngModel)]="user.matriculeColl" required>
+        <p *ngIf="matriculeColl.hasError('required')" ng-message="required">Le matricule doit etre renseignee</p>
+      </div>
 
-      <label>Mot de passe</label>
-      <input type="text" name="motDePasse" #motDePasse="ngModel" [(ngModel)]="user.motDePasse" required>
-      <p *ngIf="motDePasse.hasError('required')" ng-message="required">Le mot de passe doit etre renseignee</p>
-      <!-- <p *ngIf="motDePasse.hasError('minlength')" ng-message="minlength">L'adresse doit avoir 7 characteres minimum</p> -->
+      <br />
 
-      <button type="submit">Valider</button>
+      <div>
+        <label>Mot de passe</label>
+        <input type="text" name="motDePasse" #motDePasse="ngModel" [(ngModel)]="user.motDePasse" required>
+        <p *ngIf="motDePasse.hasError('required')" ng-message="required">Le mot de passe doit etre renseignee</p>
+      </div>
+
+      <br />
+
+      <button type="submit" class="btn btn-primary">Valider</button>
     </form>
 
   </div>
 
-
-  <button routerLink="/logout" routerLinkActive="active-link" (click)=deconnecter()>Deconnexion</button>
+  <button class="btn btn-primary" routerLink="/logout" routerLinkActive="active-link" (click)=deconnecter()>Deconnexion</button>
   <!--(click)=afficher() *ngIf="affichage==false"-->
 
 </div>

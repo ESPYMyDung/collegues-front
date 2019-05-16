@@ -5,10 +5,12 @@ import { DataService } from './services/data.service';
   selector: 'app-root',
   template: `
   <h1 class="row justify-content-center">Application Collegue</h1>
+  <hr />
 
   <nav> 
     <app-menu></app-menu>
   </nav>
+  <hr />
 
   <div class="container" m-0="0"> 
     <router-outlet></router-outlet>
