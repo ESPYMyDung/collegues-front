@@ -5,7 +5,7 @@ import {environment} from '../../environments/environment';
 import { Observable } from 'rxjs';
 
 import {Subject} from "rxjs";
-import { Collegue, CollModifie, CollGallerie } from '../models/Collegue';
+import { Collegue, CollModifie, CollGallerie, CollConn } from '../models/Collegue';
 import { tap} from 'rxjs/operators';
 import { Utilisateur } from '../models/Utilisateur';
 
@@ -17,6 +17,7 @@ export class DataService {
   private action = new Subject<Collegue>(); //NB : utiliser pour deux requetes differentes
   private listePhoto = new Subject<CollGallerie[]>();
   //private listeNote = new Subject<No[]>();
+  private connect = new Subject<CollConn>();
 
   constructor(private _requete:HttpClient) { }
 
@@ -42,6 +43,12 @@ export class DataService {
   {
     return this._requete.get<Collegue>(`${environment.backendUrl}/gallerie/${mat}`, {withCredentials : true})
     .pipe(tap (coll => this.action.next(coll) ) )
+  }
+
+  recupererCollConn():Observable<CollConn>
+  {
+    return this._requete.get<CollConn>(`${environment.baseUrl}/me`, {withCredentials : true})
+    .pipe(tap (coll => this.connect.next(coll) ) )
   }
 
   // - requete PATCH - 

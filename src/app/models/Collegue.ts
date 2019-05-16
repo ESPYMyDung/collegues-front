@@ -43,3 +43,14 @@ export class CollNote
         public notes:Note[]
     ) {}
 }
+
+export class CollConn
+{
+    constructor(
+        public matricule:string,
+        public nom:string,
+        public prenoms:string,
+        public email:string,
+        public photoUrl:string,
+    ) {}
+}
