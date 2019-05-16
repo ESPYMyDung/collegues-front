@@ -33,7 +33,6 @@ export class PageDetailComponent implements OnInit {
       response => {alert(response.error)},
       () => {} );
 
-      
   }
 
   ngOnDestroy()
