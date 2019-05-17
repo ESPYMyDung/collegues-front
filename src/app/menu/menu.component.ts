@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import { Routes } from '@angular/router';
 import { DataService } from '../services/data.service';
+import { Utilisateur } from '../models/Utilisateur';
 
 
 @Component({
@@ -15,10 +16,5 @@ affichage:boolean = true;
   constructor() { }
 
   ngOnInit() { }
-
- afficher()
- {
-   this.affichage = !this.affichage;
- }
 
 }

@@ -18,6 +18,7 @@ export class DataService {
   private listePhoto = new Subject<CollGallerie[]>();
   //private listeNote = new Subject<No[]>();
   private connect = new Subject<CollConn>();
+  private bool:boolean;
 
   constructor(private _requete:HttpClient) { }
 
