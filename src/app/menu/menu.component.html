@@ -15,8 +15,8 @@
   </div>
 
   <div class="col  align-self-end">
-    <button class="btn btn-dark" routerLink="/auth" routerLinkActive="active-link">Connexion</button>
-    <!--(click)=afficher()-->
+    <button class="btn btn-dark" routerLink="/auth" routerLinkActive="active-link" (click)=afficher() *ngIf="affichage==true">Connexion</button>
+    <button class="btn btn-primary" routerLink="/logout" routerLinkActive="active-link" (click)=afficher() *ngIf="affichage==false">Deconnexion</button>
   </div>
 
 </div>

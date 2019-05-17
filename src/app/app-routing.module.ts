@@ -17,10 +17,10 @@ export const routes: Routes =
   { path: 'auth', component: AuthentificationComponent },
   { path: 'logout', component: AuthentificationComponent },
   { path: 'me', component: CollegueConnectComponent },
-  { path: '**', redirectTo: '/apropos'}
+  { path: '**', redirectTo: '/apropos'},
 
   // redirection par défault vers /xxx un seul a faire!!!!
-  //{ path: '', pathMatch: 'full', redirectTo: '/accueil' },
+  { path: '', pathMatch: 'full', redirectTo: '/auth' },
 
 ];
 

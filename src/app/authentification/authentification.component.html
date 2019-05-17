@@ -1,10 +1,9 @@
-<p>
-  authentification works!
-</p>
-
 <div class="container" p-1>
 
-  <div class="col-sm-12">
+  <div class="col-sm-12" *ngIf="affichage==true">
+
+    <h3>Vous êtes deconnecte, veuillez vous connecter</h3>
+    <br />
 
     <form (ngSubmit)="validerAuth()" #creeForm="ngForm">
       <div>
@@ -23,12 +22,15 @@
 
       <br />
 
-      <button type="submit" class="btn btn-primary">Valider</button>
+      <button type="submit" class="btn btn-primary" (click)=afficher() routerLink="/accueil" routerLinkActive="active-link">Valider</button>
     </form>
 
   </div>
 
-  <button class="btn btn-primary" routerLink="/logout" routerLinkActive="active-link" (click)=deconnecter()>Deconnexion</button>
-  <!--(click)=afficher() *ngIf="affichage==false"-->
+  <div class="col-sm-12" *ngIf="affichage==false">
+    <h3>Voulez vous vraiment vous deconnecter?</h3>
+    <button class="btn btn-primary" routerLink="/logout" routerLinkActive="active-link" (click)=afficher() (click)=deconnecter()>Oui</button>
+    <button class="btn btn-secondary" routerLink="/accueil" routerLinkActive="active-link">Non</button>
+  </div>
 
 </div>

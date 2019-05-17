@@ -1,13 +1,10 @@
-<p>
-  gallerie works!
-</p>
-
 <div class="container">
 
     <ul>
       <li *ngFor="let coll of listeCollGall">
         <a routerLink='{{coll.matricule}}' routerLinkActive="active-link">
           <img src="{{coll.photoUrl}}" width="200" heigth="200" (click)="recupererColl(coll.matricule)"/>
+          <br />
         </a>
       </li>
     </ul>

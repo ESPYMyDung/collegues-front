@@ -10,10 +10,15 @@ import { DataService } from '../services/data.service';
   styleUrls: ['./menu.component.css']
 })
 export class MenuComponent implements OnInit {
+affichage:boolean = true;
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
+
+ afficher()
+ {
+   this.affichage = !this.affichage;
+ }
 
 }

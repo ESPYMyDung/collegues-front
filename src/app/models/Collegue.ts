@@ -52,5 +52,6 @@ export class CollConn
         public prenoms:string,
         public email:string,
         public photoUrl:string,
+        public roles:string[]
     ) {}
 }

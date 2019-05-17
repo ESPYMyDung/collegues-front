@@ -22,9 +22,4 @@ export class CollegueConnectComponent implements OnInit {
     () => {});
   }
 
-  afficherCollConn()
-  {
-    this._serv.recupererCollConn;
-  }
-
 }

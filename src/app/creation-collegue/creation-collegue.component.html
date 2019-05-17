@@ -1,11 +1,11 @@
 <div class="container" p-1>
-    
+
   <div class="row">
 
     <div class="col-sm-4">
       <img src="{{col.photoUrl}}" width="100" heigth="100" />
     </div>
-   
+
     <div class="col-sm-4">
       <p>Nom : </p>
       <p>Prenoms : </p>
@@ -13,40 +13,40 @@
       <p>Email : </p>
       <p> Photo URL :</p>
     </div>
-   
+
     <div class="col-sm-4">
 
       <form (ngSubmit)="creerCollegue()" #creeForm="ngForm">
 
-        <input type="text" name="nom" #nom="ngModel" [(ngModel)]="col.nom" required >
+        <input type="text" name="nom" #nom="ngModel" [(ngModel)]="col.nom" required>
         <p *ngIf="nom.hasError('required')" ng-message="required">Le nom doit etre renseignee</p>
-        <br/>
+        <br />
 
-        <input type="text" name="prenoms" #prenoms="ngModel" [(ngModel)]="col.prenoms" required >
+        <input type="text" name="prenoms" #prenoms="ngModel" [(ngModel)]="col.prenoms" required>
         <p *ngIf="prenoms.hasError('required')" ng-message="required">Le prenom doit etre renseignee</p>
-        <br/>
+        <br />
 
-        <input type="text" name="dateDeNaissance" #dateDeNaissance="ngModel" [(ngModel)]="col.dateDeNaissance" required >
-        <p *ngIf="dateDeNaissance.hasError('required')" ng-message="required">La date de naissance doit etre renseignee</p>
-        <br/>
+        <input type="text" name="dateDeNaissance" #dateDeNaissance="ngModel" [(ngModel)]="col.dateDeNaissance" required>
+        <p *ngIf="dateDeNaissance.hasError('required')" ng-message="required">La date de naissance doit etre renseignee
+        </p>
+        <br />
 
-        <input type="text" name="email" #email="ngModel" [(ngModel)]="col.email" required >
+        <input type="text" name="email" #email="ngModel" [(ngModel)]="col.email" required>
         <p *ngIf="email.hasError('required')" ng-message="required">L'email doit etre renseignee</p>
-        <br/>
+        <br />
 
         <input type="text" name="photoUrl" #photoUrl="ngModel" [(ngModel)]="col.photoUrl" required minlength="7">
         <p *ngIf="photoUrl.hasError('required')" ng-message="required">L'image doit etre renseignee</p>
         <p *ngIf="photoUrl.hasError('minlength')" ng-message="minlength">L'adresse doit avoir 7 characteres minimum</p>
-        <br/>
+        <br />
 
-              <div class="row justify-content-end" >
-                  <button class="btn btn-primary" type="submit" [hidden]="creeForm.invalid">Valider</button>
-                  <button class="btn btn-secondary" (click)="afficherBouton()">Retour</button>
-              </div>
+        <div class="row justify-content-end">
+          <button class="btn btn-primary" type="submit" [hidden]="creeForm.invalid" (click)="afficherBouton()">Valider</button>
+          <button class="btn btn-secondary" (click)="afficherBouton()">Retour</button>
+        </div>
       </form>
-      
+
     </div>
   </div>
 
 </div>
-
