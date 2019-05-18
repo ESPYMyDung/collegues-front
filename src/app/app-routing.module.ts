@@ -7,7 +7,6 @@ import { AproposComponent } from './apropos/apropos.component';
 import { PageDetailComponent } from './page-detail/page-detail.component';
 import { AuthentificationComponent } from './authentification/authentification.component';
 import { CollegueConnectComponent } from './collegue-connect/collegue-connect.component';
-import { MenuComponent } from './menu/menu.component';
 
 export const routes: Routes = 
 [
